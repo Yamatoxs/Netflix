@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/227_Netflix_logo-512.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <title>Netflix</title>
+</head>
+<body>
+    <h1>Quem está assistindo?</h1>
+    <div class="Imagens-de-login">
+        <div class="perfil">
+            <a href="carregamento/loading.html">
+            <img src="https://i.pinimg.com/originals/57/b5/48/57b548e702565aa31924bcf76bf39f7d.gif">
+            </a>
+            <p>ユキ</p>
+        </div>
+        <div class="perfil">
+            <a href="carregamento/loading2.html">
+            <img src="https://i.pinimg.com/originals/f8/32/b6/f832b6199ccac0b584562742fc9fa236.gif">
+        </a>
+            <p>ユミ</p>
+        </div>
+        <div class="perfil">
+            <a href="carregamento/loading3.html">
+            <img src="https://i.pinimg.com/originals/ad/7b/f8/ad7bf808ccee7eb562bfe0fa956c643e.gif">
+        </a>
+            <p>アウグスト</p>
+        </div>
+        <div class="perfil">
+            <a href="carregamento/loading4.html">
+            <img src="https://i.pinimg.com/originals/1d/68/14/1d6814affaf5d9c7c646a33125c6aa0c.gif">
+        </a>
+            <p>牛富岡</p>
+        </div>
+        <div class="perfil">
+            <a href="carregamento/loading5.html">
+            <img src="https://i.pinimg.com/originals/99/31/35/993135ca8007e3fceeda91a34a09c573.gif">
+        </a>
+            <p>みず</p>
+        </div>
+    </div>
+    <button onclick="window.location.href='gerenciar.html'">Gerenciar Perfis</button>
+
+    <script>
+        const imagens = document.querySelectorAll(".perfil img");
+        const perfis = document.querySelectorAll(".perfil");
+        const h1 = document.querySelector("h1");
+
+imagens.forEach((imagem, index) => {
+    imagem.style.transition = "opacity 0.3s ease";
+    perfis[index].addEventListener("mouseover", () => {
+        imagens.forEach((img) => img.style.opacity = 0.3);
+        imagem.style.opacity = 1;
+        h1.style.opacity = 0.5;
+    });
+
+    perfis[index].addEventListener("mouseout", () => {
+        imagens.forEach((img) => img.style.opacity = 1);
+        h1.style.opacity = 1;
+    });
+});
+    </script>
+</body>
+</html>

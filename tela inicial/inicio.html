@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<!-- Parte desse código pertence  "@OnlineTutorialsYT" eu só atualizei, e dei uma melhorada nele, o resto é tudo meu. -->
+
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/227_Netflix_logo-512.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="inicio.css">
+    <title>Netflix | Inicio</title>
+</head>
+<body>
+    <header>
+        <a class="logo"><img src="logoY.png"></a>
+        <ul class="navigation">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Series</a></li>
+            <li><a href="#">Filmes</a></li>
+            <li><a href="#">Bombando</a></li>
+            <li><a href="#">Minha lista</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Pesquisar">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+        <i class="fa fa-bell fa-2x" aria-hidden="true"></i>
+        <a href="../index.html">
+            <img class="you" src="https://i.pinimg.com/originals/ad/7b/f8/ad7bf808ccee7eb562bfe0fa956c643e.gif" >
+        </a>
+    </header>
+    <div class="banner">
+        <img src="bg2.png" class="bg">
+        <div class="content">
+            <img src="name.png" class="movieTitle">
+            <h4>
+                <span>2023</span>
+                <span><i>14+</i></span>
+                <span>1 temporada</span>
+                <span>Ação e aventura</span>
+            </h4>
+            <p>Em uma aventura pirata épica, siga Monkey D. Luffy e sua tripulação em busca do tesouro lendário, o One Piece. Enfrente inimigos, desvende segredos e forje amizades no mundo de 'One Piece'.</p>
+            <div class="buttons">
+                <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Assistir</a>
+                <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Minha Lista</a>
+            </div>
+        </div>
+        <div class="play" onclick="toggleVideo();" ><img src="play.png">Ver Trailer</div>
+    </div>
+
+    <div class="trailer">
+        <video src="Trailer.mp4" controls="true"></video>
+        <img src="close.png" class="close" onclick="toggleVideo();">
+    </div>
+
+    <h3 class="Importantes" >Porque você assistiu One Piece a Serie:</h3>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="slide"><img class="ImagemUm" src="https://theilluminerdi.com/wp-content/uploads/2023/08/Scott-Pilgrim-anime-Revealed-2000x1125.jpg" alt="Filme 1"></div>
+            <a href="../YukiStudio.html">
+            <div class="slide"><img class="ImagemDois" src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/1ecde018e863e2aaee31f00a23378c35.jpe" alt="Filme 2"></div>
+            </a>
+            <div class="slide"><img class="ImagemDois" src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/d45157163f2cfa6c1ce3ae32c30a96f4.jpe" alt="Filme 3"></div>
+            <div class="slide"><img class="ImagemDois" src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/8b7f5847f9b97f921e41d4ef59fd2d79.jpe" alt="Filme 4"></div>
+            <div class="slide"><img class="ImagemDois" src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/201d819c4a179ec57b2ff9369f00641a.jpe" alt="Filme 5"></div>
+        </div>
+    </div>
+    <h3 class="Importantes" >Novos na Netflix</h3>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="slide"><img class="ImagemUm" src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/ea075b926e1073f4eb016bff8cdb434c.jpe" alt="Filme 1"></div>
+            <div class="slide"><img class="ImagemDois" src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/0373e7213a475abe3c6951e70b6ca02e.jpe" alt="Filme 2"></div>
+            <div class="slide"><img class="ImagemDois" src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/6aaf36afb57680cdc5812e28a98bb62d.jpe" alt="Filme 3"></div>
+            <div class="slide"><img class="ImagemDois" src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/d6f19951f2ccd8842379956bfd3ae8cf.jpe" alt="Filme 4"></div>
+            <div class="slide"><img class="ImagemDois" src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/abb617b75232e7275ddecce8dea253ac.jpe" alt="Filme 5"></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleVideo(){
+            const trailer = document.querySelector('.trailer');
+            const video = document.querySelector('.video');
+            trailer.classList.toggle('active')
+            video.currentTime = 0;
+            video.pause();
+        }
+
+        const carousel = document.querySelector('.carousel');
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+function showSlide(index) {
+    if (index < 0) {
+        currentIndex = slides.length - 1;
+    } else if (index >= slides.length) {
+        currentIndex = 0;
+    }
+
+    const offset = -currentIndex * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+    currentIndex++;
+    showSlide(currentIndex);
+}
+
+function prevSlide() {
+    currentIndex--;
+    showSlide(currentIndex);
+}
+    </script>
+</body>
+</html>

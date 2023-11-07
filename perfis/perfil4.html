@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/227_Netflix_logo-512.png" type="image/png">
+    <link rel="stylesheet" href="perfis.css">
+    <title>Netflix</title>
+</head>
+<body>
+    <h1>Editar perfil</h1>
+    <div class="linha"></div>
+    <div class="conteudo">
+        <section>
+        <img src="https://i.pinimg.com/originals/1d/68/14/1d6814affaf5d9c7c646a33125c6aa0c.gif" class="perfil-img">
+        </section>
+        <div class="informacoes">
+            <div class="nome" contentEditable="true">牛富岡</div>
+            <p class="Pricipais">Idioma:</p>
+            <div class="idioma-select">
+                <div class="selecionar-idioma">
+                    <p class="idi-pt">Português ▼</p>
+                </div>
+                <ul class="idiomas-lista">
+                    <li><a href="#">Inglês</a></li>
+                    <li><a href="#">Espanhol</a></li>
+                    <li><a href="#">Francês</a></li>
+                </ul>
+            </div>
+            <p class="Pricipais2">Game ID:</p>
+            <h6>Seu ID é um nome exclusivo que será usado ao jogar com outros assinantes na Netflix Games. <a href="#">Saiba mais.</a></h6>
+            <div class="nome2" contentEditable="true">Criar Game ID</div>
+            <div class="linha2"></div>
+            <p class="Pricipais2">Configurações de classificação etária:</p>
+            <h5>Todas as classficações etarias</h5>
+            <p class="dois">Mostrar titulos de todas as classficações etárias para este perfil</p>
+            <button>Editar</button>
+            <div class="linha3"></div>
+            <p class="Pricipais2">Controle de inicio automatico</p>
+            <label class="checkbox-label">
+                <input type="checkbox" class="custom-checkbox">
+                <span class="custom-checkmark"></span>
+                <h6 class="espaço">Iniciar automaticamente o proximo episodio de uma serie em todos os aparelhos.</h6>
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" class="custom-checkbox">
+                <span class="custom-checkmark"></span>
+                <h6 class="espaço">Reproduzir automaticamente as previas ao navegar em todos os aparelhos</h6>
+            </label>
+        </div>
+    </div>
+    <div class="linha"></div>
+    <button class="botões2">salvar</button>
+    <a href="../gerenciar.html">
+    <button class="botões3">voltar</button>
+    </a>
+
+    <script>
+        const selecionarIdioma = document.querySelector('.selecionar-idioma');
+        const idiomasLista = document.querySelector('.idiomas-lista');
+
+        selecionarIdioma.addEventListener('click', () => {
+            idiomasLista.style.display = idiomasLista.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (event.target !== selecionarIdioma && event.target.parentNode !== idiomasLista) {
+                idiomasLista.style.display = 'none';
+            }
+        });
+
+        
+    </script>
+</body>
+</html>
